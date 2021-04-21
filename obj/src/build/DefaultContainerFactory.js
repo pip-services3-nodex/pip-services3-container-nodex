@@ -10,6 +10,7 @@ const pip_services3_components_nodex_6 = require("pip-services3-components-nodex
 const pip_services3_components_nodex_7 = require("pip-services3-components-nodex");
 const pip_services3_components_nodex_8 = require("pip-services3-components-nodex");
 const pip_services3_components_nodex_9 = require("pip-services3-components-nodex");
+const pip_services3_components_nodex_10 = require("pip-services3-components-nodex");
 /**
  * Creates default container components (loggers, counters, caches, locks, etc.) by their descriptors.
  *
@@ -31,14 +32,15 @@ class DefaultContainerFactory extends pip_services3_components_nodex_1.Composite
      */
     constructor(...factories) {
         super(...factories);
-        this.add(new pip_services3_components_nodex_8.DefaultInfoFactory());
+        this.add(new pip_services3_components_nodex_9.DefaultInfoFactory());
         this.add(new pip_services3_components_nodex_2.DefaultLoggerFactory());
         this.add(new pip_services3_components_nodex_3.DefaultCountersFactory());
-        this.add(new pip_services3_components_nodex_4.DefaultConfigReaderFactory());
-        this.add(new pip_services3_components_nodex_5.DefaultCacheFactory());
-        this.add(new pip_services3_components_nodex_6.DefaultCredentialStoreFactory());
-        this.add(new pip_services3_components_nodex_7.DefaultDiscoveryFactory());
-        this.add(new pip_services3_components_nodex_9.DefaultTestFactory());
+        this.add(new pip_services3_components_nodex_4.DefaultTracerFactory());
+        this.add(new pip_services3_components_nodex_5.DefaultConfigReaderFactory());
+        this.add(new pip_services3_components_nodex_6.DefaultCacheFactory());
+        this.add(new pip_services3_components_nodex_7.DefaultCredentialStoreFactory());
+        this.add(new pip_services3_components_nodex_8.DefaultDiscoveryFactory());
+        this.add(new pip_services3_components_nodex_10.DefaultTestFactory());
     }
 }
 exports.DefaultContainerFactory = DefaultContainerFactory;
